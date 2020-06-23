@@ -1,4 +1,5 @@
 #Aqui arriba iran las funciones
+#Hola soy Edwin
 #funcion para "Acerca de", jaj creo que es una obviedad
 acercaDe = "\n---Acerca de---\nNombre del programa: Yahtzee modificado\n" \
            "Version: aun por definir (recordar las tildes)\n" \
