@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=TableroVista
+comment0.text=\r\n\ Vista\ del\ programa.\r\n\r\n\ @author\ Eithel\ Jose\ Vega\ Robles\r\n\ @version\ 8/10/20\r\n
+comment1.params=
+comment1.target=TableroVista()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Tablero\r\n
+comment2.params=
+comment2.target=void\ turno1()
+comment2.text=\r\n\ anuncia\ que\ es\ el\ turno\ del\ jugador\ 1\r\n
+comment3.params=seleccion
+comment3.target=void\ turno2(int)
+comment3.text=\r\n\ anuncia\ que\ es\ el\ turno\ de\ la\ maquina\r\n
+numComments=4

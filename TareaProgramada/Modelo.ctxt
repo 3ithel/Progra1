@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Modelo
+comment0.text=\r\n\ El\ modelo\ del\ programa,\ los\ datos\ se\ introducen\ aqui\ por\ el\ usuario.\r\n\r\n\ @author\ Eithel\ Jose\ Vega\ Robles\r\n\ @version\ 8/10/20\r\n
+comment1.params=
+comment1.target=Modelo()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Modelo\r\n
+comment2.params=
+comment2.target=void\ despliegueUsuario()
+comment2.text=\r\n\ El\ menu\ desplegable\ del\ juego,\ lo\ que\ elije\ el\ usuario\ se\ guarda\ aqui\r\n\r\n\ \r\n
+comment3.params=matriz
+comment3.target=int\ pedirColumna(int[][])
+comment3.text=\r\n\ pide\ el\ numero\ por\ el\ cual\ caera\ la\ ficha\ y\ avisa\ si\ la\ columna\ esta\ llena\r\n
+comment4.params=seleccion\ primOpc\ ultimOpc
+comment4.target=int\ menuNumero(int,\ int,\ int)
+comment4.text=\r\n\ pide\ la\ opcion\ del\ menu\ que\ se\ quiere\r\n
+comment5.params=
+comment5.target=void\ continuar()
+comment5.text=\r\n\ no\ hace\ gran\ cosa,\ permite\ que\ el\ usuario\ pueda\ leer\ lo\ ultimo\ antes\ de\ que\ se\ \r\n\ limpie\ la\ pantalla.\r\n
+numComments=6
