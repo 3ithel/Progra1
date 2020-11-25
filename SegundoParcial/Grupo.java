@@ -70,12 +70,12 @@ public class Grupo
             
             while(auxiliar.getSiguiente() != null)
             {
-                System.out.println("Posicion: " + posicion + " Valor: " + auxiliar.getValor());
+                System.out.println(auxiliar.getEstudiante().toString(auxiliar.getEstudiante()));
                 auxiliar = auxiliar.getSiguiente();
                 posicion++;
             }
             
-            System.out.println("Posicion: " + posicion + " Valor: " + auxiliar.getValor());
+            System.out.println(auxiliar.getEstudiante().toString(auxiliar.getEstudiante()));
         }
     }
     
@@ -154,61 +154,13 @@ public class Grupo
         {
             return false;
         }
-        else if( valor == actual.getValor() )
+        else if( valor.getPromedio() == actual.getEstudiante().getPromedio() )
         {
             return true;
         }
         
-        return valor < actual.getValor() ? buscarElementoRecursivo(actual.getHijoIzquierdo(), valor) : buscarElementoRecursivo(actual.getHijoDerecho(), valor);
+        return valor.getPromedio() < actual.getEstudiante().getPromedio() ? buscarElementoRecursivo(actual.getHijoIzquierdo(), valor) : buscarElementoRecursivo(actual.getHijoDerecho(), valor);
     }
     
-    public void eliminarNodo(int valor) 
-    {
-        raiz = eliminarRecursivo(raiz, valor);
-    }
     
-    public NodoArbol eliminarRecursivo(NodoArbol actual, int valor)
-    {
-        if (actual == null) 
-        {
-            return null;
-        }
-        else if (valor == actual.getValor()) 
-        {
-            // Si no tiene hijos solo elimino el nodo
-            if (actual.getHijoIzquierdo() == null && actual.getHijoDerecho() == null) 
-            {
-                return null;
-            }
-            // Solo tiene un hijo
-            else if(actual.getHijoIzquierdo() != null && actual.getHijoDerecho() == null)
-            {
-                return actual.getHijoIzquierdo();
-            }
-            else if(actual.getHijoIzquierdo() == null && actual.getHijoDerecho() != null)
-            {
-                return actual.getHijoDerecho();
-            }
-            // Tiene ambos hijos, buscamos el hijo menor a la derecha
-            
-            int menorNodo = buscarNodoMenor(actual.getHijoDerecho());
-            actual.setValor(menorNodo);
-            actual.setHijoDerecho(eliminarRecursivo(actual.getHijoDerecho(), menorNodo));
-            return actual;
-            
-        } 
-        else if (valor < actual.getValor()) 
-        {
-            actual.setHijoIzquierdo(eliminarRecursivo(actual.getHijoIzquierdo(), valor));
-            return actual;
-        }
-        actual.setHijoDerecho(eliminarRecursivo(actual.getHijoDerecho(), valor));
-        
-        return actual;
-    }
-    
-    private int buscarNodoMenor(NodoArbol actual) 
-    {
-        return actual.getHijoIzquierdo() == null ? actual.getValor() : buscarNodoMenor(actual.getHijoIzquierdo());
-    }
 }

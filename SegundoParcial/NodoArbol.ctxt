@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=NodoArbol
+comment1.params=estudiante
+comment1.target=NodoArbol(Estudiante)
+comment2.params=
+comment2.target=Estudiante\ getEstudiante()
+comment3.params=
+comment3.target=NodoArbol\ getHijoIzquierdo()
+comment4.params=
+comment4.target=NodoArbol\ getHijoDerecho()
+comment5.params=estudiante
+comment5.target=void\ setEstudiante(Estudiante)
+comment6.params=nuevoNodo
+comment6.target=void\ setHijoIzquierdo(NodoArbol)
+comment7.params=nuevoNodo
+comment7.target=void\ setHijoDerecho(NodoArbol)
+numComments=8

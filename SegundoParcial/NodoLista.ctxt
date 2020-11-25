@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=NodoLista
+comment1.params=
+comment1.target=void\ NodoLista()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Nodo\r\n
+comment2.params=
+comment2.target=int\ getValor()
+comment3.params=valor
+comment3.target=void\ setValor(int)
+comment4.params=
+comment4.target=Estudiante\ getEstudiante()
+comment5.params=estudiante
+comment5.target=void\ setEstudiante(Estudiante)
+comment6.params=
+comment6.target=NodoLista\ getSiguiente()
+comment7.params=siguiente
+comment7.target=void\ setSiguiente(NodoLista)
+numComments=8

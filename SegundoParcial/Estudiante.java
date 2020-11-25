@@ -10,7 +10,7 @@ public class Estudiante
     // instance variables - replace the example below with your own
     private String nombre;
     private int carnet;
-    Lista notas;
+    Grupo notas;
     private int promedio;
 
     /**
@@ -45,12 +45,12 @@ public class Estudiante
         this.carnet = carnet;
     }
     
-    public Lista getNotas()
+    public Grupo getNotas()
     {
         return notas;
     }
     
-    public void setNotas(Lista notas)
+    public void setNotas(Grupo notas)
     {
         this.notas = notas;
     }
@@ -63,5 +63,11 @@ public class Estudiante
     public void setPromedio(int promedio)
     {
         this.promedio = promedio;
+    }
+    
+    public String toString(Estudiante obj) {
+        
+        
+        return "(" + obj.nombre + " - " + obj.carnet + " - " + obj.promedio + ")";
     }
 }
