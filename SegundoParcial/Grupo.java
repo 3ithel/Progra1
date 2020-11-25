@@ -36,10 +36,13 @@ public class Grupo
         return tamanio;
     }
     
-    public void agregarEnLista(int valor)
+    public void agregarEnLista(String nombre, int carnet, Grupo notas)
     {
         NodoLista nuevoNodo = new NodoLista();
-        nuevoNodo.setValor(valor);
+        nuevoNodo.getEstudiante().setNombre(nombre);
+        nuevoNodo.getEstudiante().setCarnet(carnet);
+        nuevoNodo.getEstudiante().setNotas(notas);
+        //nuevoNodo.getEstudiante().setNombre(nombre);
         
         if(esVacia())
         {

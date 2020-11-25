@@ -70,4 +70,27 @@ public class Estudiante
         
         return "(" + obj.nombre + " - " + obj.carnet + " - " + obj.promedio + ")";
     }
+    
+    public void imprimirLista(Grupo reco)
+    {
+        if(reco!=null)
+        {
+            Grupo auxiliar = reco;
+            
+            
+            if(auxiliar.getSiguiente() != null)
+            {
+                imprimirLista(reco.getSiguiente());
+                System.out.println(auxiliar.getValor());
+                auxiliar = auxiliar.getSiguiente();
+                
+            }
+            else
+            {
+                System.out.println(auxiliar.getValor());
+            }
+            
+            //System.out.println("Posicion: " + posicion + " Valor: " + auxiliar.getValor());
+        }
+    }
 }
