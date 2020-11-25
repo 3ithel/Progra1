@@ -25,5 +25,43 @@ public class Estudiante
         promedio = 0;
     }
 
+    public String getNombre()
+    {
+        return nombre;
+    }
     
+    public void setNombre(String nombre)
+    {
+        this.nombre = nombre;
+    }
+    
+    public int getCarnet()
+    {
+        return carnet;
+    }
+    
+    public void setCarnet(int carnet)
+    {
+        this.carnet = carnet;
+    }
+    
+    public Lista getNotas()
+    {
+        return notas;
+    }
+    
+    public void setNotas(Lista notas)
+    {
+        this.notas = notas;
+    }
+    
+    public int getPromedio()
+    {
+        return promedio;
+    }
+    
+    public void setPromedio(int promedio)
+    {
+        this.promedio = promedio;
+    }
 }

@@ -12,6 +12,7 @@ public class NodoLista
     public void NodoLista()
     {
         this.valor = 0;
+        this.estudiante = null;
         this.siguiente = null;
     }
     
