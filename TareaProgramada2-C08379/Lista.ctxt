@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Lista
+comment1.params=
+comment1.target=void\ Lista()
+comment2.params=
+comment2.target=boolean\ esVacia()
+comment3.params=
+comment3.target=int\ getTamanio()
+comment4.params=valor\ potencia
+comment4.target=void\ agregar(int,\ int)
+comment5.params=
+comment5.target=void\ imprimirLista()
+comment6.params=valorReferencia
+comment6.target=boolean\ existeElemento(int)
+numComments=7

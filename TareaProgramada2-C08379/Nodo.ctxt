@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Nodo
+comment1.params=
+comment1.target=void\ Nodo()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Nodo\r\n
+comment2.params=
+comment2.target=int\ getValor()
+comment3.params=valor
+comment3.target=void\ setValor(int)
+comment4.params=
+comment4.target=java.lang.String\ getIncognita()
+comment5.params=incognita
+comment5.target=void\ setIncognita(java.lang.String)
+comment6.params=
+comment6.target=int\ getPotencia()
+comment7.params=potencia
+comment7.target=void\ setPotencia(int)
+comment8.params=
+comment8.target=Nodo\ getSiguiente()
+comment9.params=siguiente
+comment9.target=void\ setSiguiente(Nodo)
+numComments=10

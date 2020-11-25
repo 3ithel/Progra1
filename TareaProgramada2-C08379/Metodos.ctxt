@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Metodos
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Metodos\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=lista\ valor\ potencia
+comment1.target=void\ agregarElemento(Lista,\ int,\ int)
+comment2.params=lista1\ lista2
+comment2.target=void\ menu(Lista,\ Lista)
+comment3.params=lista1\ lista2
+comment3.target=void\ digitar(Lista,\ Lista)
+comment4.params=lista1\ lista2
+comment4.target=void\ extraer(Lista,\ Lista)
+comment5.params=seleccion\ primOpc\ ultimOpc
+comment5.target=int\ menuNumero(int,\ int,\ int)
+numComments=6
