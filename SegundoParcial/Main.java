@@ -13,7 +13,7 @@ public class Main
         Grupo arbol = new Grupo();
         Motor motor = new Motor();
         
-        
+        motor.obtenerDatos(listaNotas, listaEstudiantes);
         
     }
 }

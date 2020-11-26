@@ -71,23 +71,26 @@ public class Estudiante
         return "(" + obj.nombre + " - " + obj.carnet + " - " + obj.promedio + ")";
     }
     
-    public void imprimirLista(Grupo reco)
+    public void promedio(NodoLista reco, int acumulado, int contador)
     {
+        
         if(reco!=null)
         {
-            Grupo auxiliar = reco;
+            NodoLista auxiliar = reco;
             
             
             if(auxiliar.getSiguiente() != null)
             {
-                imprimirLista(reco.getSiguiente());
-                System.out.println(auxiliar.getValor());
+                promedio(reco.getSiguiente(), acumulado, contador);
+                acumulado = acumulado + auxiliar.getValor();
+                contador++;
                 auxiliar = auxiliar.getSiguiente();
                 
             }
             else
             {
-                System.out.println(auxiliar.getValor());
+                acumulado = acumulado + auxiliar.getValor();
+                contador++;
             }
             
             //System.out.println("Posicion: " + posicion + " Valor: " + auxiliar.getValor());

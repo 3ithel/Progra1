@@ -36,13 +36,17 @@ public class Grupo
         return tamanio;
     }
     
-    public void agregarEnLista(String nombre, int carnet, Grupo notas)
+    public NodoLista getInicio() {
+        return inicio;
+    }
+    
+    public void agregarEnLista(String nombre, int carnet, Grupo notas, int promedio)
     {
         NodoLista nuevoNodo = new NodoLista();
         nuevoNodo.getEstudiante().setNombre(nombre);
         nuevoNodo.getEstudiante().setCarnet(carnet);
         nuevoNodo.getEstudiante().setNotas(notas);
-        //nuevoNodo.getEstudiante().setNombre(nombre);
+        nuevoNodo.getEstudiante().setPromedio(promedio);
         
         if(esVacia())
         {
@@ -63,6 +67,30 @@ public class Grupo
         tamanio++;
     }
     
+    public void agregarEnNotas(int nota)
+    {
+        NodoLista nuevoNodo = new NodoLista();
+        nuevoNodo.setValor(nota);
+        
+        
+        if(esVacia())
+        {
+            inicio = nuevoNodo;
+        }
+        else
+        {
+            NodoLista auxiliar = inicio;
+            
+            while(auxiliar.getSiguiente() != null)
+            {
+                auxiliar = auxiliar.getSiguiente();
+            }
+            
+            auxiliar.setSiguiente(nuevoNodo);
+        }
+        
+        tamanio++;
+    }
     
     public void imprimirLista()
     {
