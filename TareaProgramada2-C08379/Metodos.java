@@ -9,10 +9,12 @@ public class Metodos
 {   
     int seleccion;
     String operacion;
+    //lista clon;
     
     public Metodos () {
         seleccion = 0;
         operacion = "";
+        //clon = null;
     }
     
     public void agregarElemento ( Lista lista, int valor, int potencia ) {
@@ -209,14 +211,17 @@ public class Metodos
     public void calculo (Lista lista1, Lista lista2, String operacion, Lista resultado) {
         if ( operacion.equals("+") ) {
             System.out.println("es suma");
+            suma(lista1, lista2, resultado);
         }
         
         if ( operacion.equals("-") ) {
             System.out.println("es resta");
+            resta(lista1, lista2, resultado);
         }
         
         if ( operacion.equals("/") ) {
             System.out.println("es division");
+            division(lista1, lista2, resultado);
         }
         
         if ( operacion.equals("*") ) {
@@ -225,6 +230,68 @@ public class Metodos
     }
     
     public void suma (Lista lista1, Lista lista2, Lista resultado) {
+        int limite1 = lista1.getTamanio();
+        int limite2 = lista2.getTamanio();
+        //int posicion1 = 0;
+        //int posicion2 = 0;
+        int confirma = 0;
+        int suma = 0;
+        
+        for ( int i = 0; i < limite1; i++ ) {
+            for ( int k = 0; k < limite2; k++ ) {
+                if ( lista1.sacarPotencia(lista1, i) == lista2.sacarPotencia(lista2, k) && confirma == 0) {
+                    suma = lista1.sacarValor(lista1, i) + lista2.sacarValor(lista2, k);
+                    resultado.agregar(suma, lista1.sacarPotencia(lista1, i));
+                    
+                    confirma++;
+                }
+                //posicion2++;
+            }
+            
+            if ( confirma == 0 ) {
+                resultado.agregar(lista1.sacarValor(lista1, i), lista1.sacarPotencia(lista1, i));
+            }
+            
+            //posicion1++;
+            confirma = 0;
+        }
+        
+        for ( int k = 0; k < limite2; k++ ) {
+            for ( int i = 0; i < limite1; i++ ) {
+                if ( lista1.sacarPotencia(lista1, i) == lista2.sacarPotencia(lista2, k) && confirma == 0) {
+                    confirma++;
+                }
+                //posicion2++;
+            }
+            
+            if ( confirma == 0 ) {
+                resultado.agregar(lista2.sacarValor(lista2, k), lista2.sacarPotencia(lista2, k));
+            }
+            
+            //posicion1++;
+            confirma = 0;
+        }
+    }
+    
+    public void resta (Lista lista1, Lista lista2, Lista resultado) {
+        int limite2 = lista2.getTamanio();
+        Lista sustituto = new Lista();
+        
+        for ( int k = 0; k < limite2; k++ ) {
+            sustituto.agregar(lista2.sacarValorNegativo(lista2, k), lista2.sacarPotencia(lista2, k));
+        }
+        
+        suma(lista1, sustituto, resultado);
+    }
+    
+    public void division (Lista lista1, Lista lista2, Lista resultado) {
+        int valor = lista1.sacarValor(lista1, 0) / lista2.sacarValor(lista2, 0);
+        int potencia = lista1.sacarPotencia(lista1, 0) - lista2.sacarPotencia(lista2, 0);
+        
+        resultado.agregar(valor, potencia);
+    }
+    
+    public void multiplicacion (Lista lista1, Lista lista2, Lista resultado) {
         
     }
     

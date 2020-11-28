@@ -19,7 +19,12 @@ public class Main
         System.out.println("");
         ec2.imprimirLista();
         System.out.println("");
-        System.out.println(operacion);
+        //System.out.println(operacion);
+        resultado.imprimirLista();
         
+        //System.out.println(ec1.sacarValor(ec1, 2)); 
+        
+        //System.out.println(ec1.avanceValor());
+        //System.out.println(ec1.avanceValor());
     }
 }

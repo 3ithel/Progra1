@@ -65,6 +65,67 @@ public class Lista
         }
     }
     
+    public int sacarValor(Lista lista, int posicion)
+    {
+        if(!esVacia())
+        {
+            Nodo auxiliar = inicio;
+            
+            if (posicion == 0) {
+                return auxiliar.getValor();
+            } else {
+                for(int indice = 0; indice < (posicion); indice++)
+                {
+                    auxiliar = auxiliar.getSiguiente();
+                }
+                     
+                return auxiliar.getValor();
+            }
+        }
+        return 0;
+    }
+    
+    public int sacarValorNegativo(Lista lista, int posicion)
+    {
+        if(!esVacia())
+        {
+            Nodo auxiliar = inicio;
+            
+            if (posicion == 0) {
+                return auxiliar.getValor() * -1;
+            } else {
+                for(int indice = 0; indice < (posicion); indice++)
+                {
+                    auxiliar = auxiliar.getSiguiente();
+                }
+                     
+                return auxiliar.getValor() * -1;
+            }
+        }
+        return 0;
+    }
+    
+    
+    public int sacarPotencia(Lista lista, int posicion)
+    {
+        if(!esVacia())
+        {
+            Nodo auxiliar = inicio;
+            
+            if (posicion == 0) {
+                return auxiliar.getPotencia();
+            } else {
+                for(int indice = 0; indice < (posicion); indice++)
+                {
+                    auxiliar = auxiliar.getSiguiente();
+                }
+                     
+                return auxiliar.getPotencia();
+            }
+        }
+        return 0;
+    }
+    
     public boolean existeElemento(int valorReferencia)
     {
         Nodo auxiliar = inicio;
