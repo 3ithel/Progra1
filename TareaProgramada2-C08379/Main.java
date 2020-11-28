@@ -8,13 +8,18 @@ public class Main
         Lista ec2 = new Lista();
         Lista resultado = new Lista();
         Metodos metodo = new Metodos();
+        String operacion = "";
         
         metodo.menu(ec1, ec2);
+        operacion = metodo.operacion;
+        
+        metodo.calculo(ec1, ec2, operacion, resultado);
         
         ec1.imprimirLista();
         System.out.println("");
         ec2.imprimirLista();
-        
+        System.out.println("");
+        System.out.println(operacion);
         
     }
 }
