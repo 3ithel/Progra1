@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Escritor
+comment1.params=ruta\ agregarAlFinal
+comment1.target=Escritor(java.lang.String,\ boolean)
+comment2.params=ruta
+comment2.target=Escritor(java.lang.String)
+comment3.params=ruta\ agregarAlFinal
+comment3.target=void\ abrir(java.lang.String,\ boolean)
+comment4.params=
+comment4.target=void\ cerrar()
+comment5.params=texto
+comment5.target=boolean\ escribir(java.lang.String)
+numComments=6

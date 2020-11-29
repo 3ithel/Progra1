@@ -15,6 +15,10 @@ public class Main
         
         metodo.calculo(ec1, ec2, operacion, resultado);
         
+        metodo.escribir(ec1, ec2, resultado, operacion);
+        System.out.println("");
+        
+        
         ec1.imprimirLista();
         System.out.print("|");
         System.out.print(operacion);
@@ -22,6 +26,7 @@ public class Main
         ec2.imprimirLista();
         System.out.print("|");
         resultado.imprimirLista();
+        
         
         
     }

@@ -16,10 +16,16 @@ public class Metodos
         
     }
     
+    /**
+     * Agrega el elemento especificando a que lista se quiere agregar
+     */
     public void agregarElemento ( Lista lista, int valor, int potencia ) {
         lista.agregar( valor, potencia );
     }
     
+    /**
+     * Se encarga de colocarnos en la recoleccion de datos manual l la lectura de archivos
+     */
     public void menu ( Lista lista1, Lista lista2) {
         System.out.println("Bienvenido a la calculadora de ecuaciones, seleccione el metodo de");
         System.out.println("obtencion de las ecuaciones para posteriormente aplicarles una operacion");
@@ -45,6 +51,10 @@ public class Metodos
         }
     }
     
+    /**
+     * Cumple funcion de Vista y Modelo al mismo tiempo, se encarga de toda la
+     * recoleccion de datos para formar las dos listas 
+     */
     public void digitar ( Lista lista1, Lista lista2) {
         int valor = 0;
         int potencia = 0;
@@ -132,6 +142,9 @@ public class Metodos
         }
     }
     
+    /**
+     * Si se llega a elegir sacar los datos por archivo, este se encargara de leer y recolectar
+     */
     public void extraer ( Lista lista1, Lista lista2) {
         Scanner entrada = new Scanner( System.in );
         String leido = "";
@@ -207,28 +220,34 @@ public class Metodos
         
     }
     
+    /**
+     * Posiciona los datos recolectados en una operacion segun esta haya sido elegida
+     */
     public void calculo (Lista lista1, Lista lista2, String operacion, Lista resultado) {
         if ( operacion.equals("+") ) {
-            System.out.println("su resultado es");
+            System.out.println("su resultado se encuentra en el archivo de texto 'Resultado.txt'");
             suma(lista1, lista2, resultado);
         }
         
         if ( operacion.equals("-") ) {
-            System.out.println("su resultado es");
+            System.out.println("su resultado se encuentra en el archivo de texto 'Resultado.txt'");
             resta(lista1, lista2, resultado);
         }
         
         if ( operacion.equals("/") ) {
-            System.out.println("su resultado es");
+            System.out.println("su resultado se encuentra en el archivo de texto 'Resultado.txt'");
             division(lista1, lista2, resultado);
         }
         
         if ( operacion.equals("*") ) {
-            System.out.println("su resultado es");
+            System.out.println("su resultado se encuentra en el archivo de texto 'Resultado.txt'");
             multiplicacion(lista1, lista2, resultado);
         }
     }
     
+    /**
+     * Si la funcion se suma esta ejecuta 
+     */
     public void suma (Lista lista1, Lista lista2, Lista resultado) {
         int limite1 = lista1.getTamanio();
         int limite2 = lista2.getTamanio();
@@ -271,6 +290,9 @@ public class Metodos
         }
     }
     
+    /**
+     * si la funcion se resta esta se ejecuta
+     */
     public void resta (Lista lista1, Lista lista2, Lista resultado) {
         int limite2 = lista2.getTamanio();
         Lista sustituto = new Lista();
@@ -282,6 +304,9 @@ public class Metodos
         suma(lista1, sustituto, resultado);
     }
     
+    /**
+     * si la funcion se divide esta se ejecuta
+     */
     public void division (Lista lista1, Lista lista2, Lista resultado) {
         int valor = lista1.sacarValor(lista1, 0) / lista2.sacarValor(lista2, 0);
         int potencia = lista1.sacarPotencia(lista1, 0) - lista2.sacarPotencia(lista2, 0);
@@ -289,14 +314,17 @@ public class Metodos
         resultado.agregar(valor, potencia);
     }
     
+    /**
+     * si la funcion se multiplica esta se ejecuta
+     */
     public void multiplicacion (Lista lista1, Lista lista2, Lista resultado) {
         int limite1 = lista1.getTamanio();
         int limite2 = lista2.getTamanio();
         int valor = 0;
         int potencia = 0;
         Lista sustituto = new Lista();
-        Lista sustituto2 = new Lista();
-        Lista sustituto3 = new Lista();
+        //Lista sustituto2 = new Lista();
+        //Lista sustituto3 = new Lista();
         
         
         for ( int i = 0; i < limite1; i++ ) {
@@ -309,21 +337,24 @@ public class Metodos
            
         }
         
+        ordenarYresumir(sustituto, resultado);
         
-        
-        
-        valor = 0;
-        potencia = 0;
+    }
+    
+    /**
+     * ordena y resume todos los valores de las ecuaciones en un objeto lista y el resultado lo copia en otro
+     * objeto lista
+     */
+    public void ordenarYresumir( Lista sustituto, Lista resultado) {
+        int valor = 0;
+        int potencia = 0;
         int valor1 = 0;
         int potencia1 = 0;
-        
-        
         
         for ( int i = 1; i < sustituto.getTamanio(); i++ ) {
             for ( int j = 0; j < sustituto.getTamanio() - i; j++) {
                 if (sustituto.sacarPotencia(sustituto, j) < sustituto.sacarPotencia(sustituto, j + 1)) {
-                    //System.out.println(sustituto.sacarPotencia(sustituto, j) + "j wololooo");
-                    //System.out.println(sustituto.sacarPotencia(sustituto, j + 1) + "j+1 wololooo");
+                    
                     
                     valor = sustituto.sacarValor(sustituto, j);
                     potencia = sustituto.sacarPotencia(sustituto, j);
@@ -358,6 +389,48 @@ public class Metodos
         }
     }
     
+    /**
+     * escribe el resultado en un archivo de texto
+     */
+    public void escribir(Lista lista1, Lista lista2, Lista resultado, String simbolo) {
+        Escritor escritor = new Escritor("Resultado.txt");
+        
+        escritor.escribir("\r\n");
+        for (int i = 0; i < lista1.getTamanio(); i++) {
+            if (lista1.sacarValor(lista1, i) < 0 || i == 0) {  
+                escritor.escribir(lista1.sacarValor(lista1, i) + "x^" + lista1.sacarPotencia(lista1, i));
+            } else {
+                escritor.escribir("+" + lista1.sacarValor(lista1, i) + "x^" + lista1.sacarPotencia(lista1, i));
+            }
+        }
+        
+        escritor.escribir("|" + simbolo + "|");
+        
+        for (int i = 0; i < lista2.getTamanio(); i++) {
+            if (lista2.sacarValor(lista2, i) < 0 || i == 0) {  
+                escritor.escribir(lista2.sacarValor(lista2, i) + "x^" + lista2.sacarPotencia(lista2, i));
+            } else {
+                escritor.escribir("+" + lista2.sacarValor(lista2, i) + "x^" + lista2.sacarPotencia(lista2, i));
+            }
+        }
+        
+        escritor.escribir("|");
+         
+        for (int i = 0; i < resultado.getTamanio(); i++) {
+            if (resultado.sacarValor(resultado, i) < 0 || i == 0) {  
+                escritor.escribir(resultado.sacarValor(resultado, i) + "x^" + resultado.sacarPotencia(resultado, i));
+            } else {
+                escritor.escribir("+" + resultado.sacarValor(resultado, i) + "x^" + resultado.sacarPotencia(resultado, i));
+            }
+        }
+        
+        
+        escritor.cerrar();
+    }
+    
+    /**
+     * necesario para pedir valores, como las selecciones de un menu
+     */
     public int menuNumero ( int seleccion, int primOpc, int ultimOpc ) {
         Scanner entrada = new Scanner( System.in );
         

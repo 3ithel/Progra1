@@ -56,12 +56,19 @@ public class Lista
             
             while(auxiliar.getSiguiente() != null)
             {
-                System.out.print(auxiliar.getValor() + auxiliar.getIncognita() + "^" + auxiliar.getPotencia());
+                if (auxiliar.getValor() < 0 || posicion == 0) {
+                    System.out.print(auxiliar.getValor() + auxiliar.getIncognita() + "^" + auxiliar.getPotencia());
+                } else {
+                    System.out.print( "+" + auxiliar.getValor() + auxiliar.getIncognita() + "^" + auxiliar.getPotencia());
+                }
                 auxiliar = auxiliar.getSiguiente();
                 posicion++;
             }
-            
-            System.out.print(auxiliar.getValor() + auxiliar.getIncognita() + "^" + auxiliar.getPotencia());
+            if (auxiliar.getValor() < 0) {
+                System.out.print(auxiliar.getValor() + auxiliar.getIncognita() + "^" + auxiliar.getPotencia());
+            } else {
+                System.out.print( "+" + auxiliar.getValor() + auxiliar.getIncognita() + "^" + auxiliar.getPotencia());
+            }
         }
     }
     
