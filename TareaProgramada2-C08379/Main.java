@@ -1,4 +1,6 @@
-
+/**
+ * El metodo Main, donde se ejecuta todo 
+ */
 public class Main
 {
     public static void main(String[] args)
@@ -10,6 +12,7 @@ public class Main
         Metodos metodo = new Metodos();
         String operacion = "";
         
+        try {
         metodo.menu(ec1, ec2);
         operacion = metodo.operacion;
         
@@ -26,7 +29,11 @@ public class Main
         ec2.imprimirLista();
         System.out.print("|");
         resultado.imprimirLista();
-        
+    } catch (StringIndexOutOfBoundsException e) {
+        System.out.print("");
+        System.out.print("Por favor vuelva a ejecutar el programa e inserte un directorio valido");
+        //la unica escepcion que se puede dar
+    }
         
         
     }

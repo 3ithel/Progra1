@@ -1,4 +1,6 @@
-
+/**
+ * Clase de ejemplo dada por el profe, con algunas modificaciones 
+ */
 public class Nodo
 {
     // instance variables - replace the example below with your own

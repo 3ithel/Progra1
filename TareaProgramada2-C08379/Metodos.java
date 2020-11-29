@@ -1,9 +1,9 @@
 import java.util.Scanner;
 /**
- * Write a description of class Metodos here.
+ * El corazon del trabajo, lo que lo hace funcionar de verdad, el motor
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Eithel Jose Vega Robles)
+ * @version (29/11/20)
  */
 public class Metodos
 {   

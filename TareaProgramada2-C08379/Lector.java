@@ -1,5 +1,7 @@
 import java.io.*;
-
+/**
+ * Clase de ejemplo dada por el profe, con algunas modificaciones 
+ */
 public class Lector
 {
     private BufferedReader lector;

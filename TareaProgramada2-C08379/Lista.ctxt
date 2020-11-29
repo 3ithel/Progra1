@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Lista
+comment0.text=\r\n\ Clase\ de\ ejemplo\ dada\ por\ el\ profe,\ con\ muchas\ modificaciones\r\n\ las\ cuales\ se\ incluyen\ funciones\ para\ traer\ determinado\ grupo\ de\ elementos\r\n\ en\ ciertas\ posiciones\r\n
 comment1.params=
 comment1.target=void\ Lista()
 comment10.params=valorReferencia

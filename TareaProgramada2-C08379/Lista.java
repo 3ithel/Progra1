@@ -1,4 +1,8 @@
-
+/**
+ * Clase de ejemplo dada por el profe, con muchas modificaciones
+ * las cuales se incluyen funciones para traer determinado grupo de elementos
+ * en ciertas posiciones
+ */
 public class Lista
 {
     // instance variables - replace the example below with your own

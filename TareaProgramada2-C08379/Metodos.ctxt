@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Metodos
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Metodos\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ El\ corazon\ del\ trabajo,\ lo\ que\ lo\ hace\ funcionar\ de\ verdad,\ el\ motor\r\n\r\n\ @author\ (Eithel\ Jose\ Vega\ Robles)\r\n\ @version\ (29/11/20)\r\n
 comment1.params=
 comment1.target=Metodos()
 comment10.params=lista1\ lista2\ resultado

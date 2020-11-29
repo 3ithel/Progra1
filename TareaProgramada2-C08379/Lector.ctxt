@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Lector
+comment0.text=\r\n\ Clase\ de\ ejemplo\ dada\ por\ el\ profe,\ con\ algunas\ modificaciones\ \r\n
 comment1.params=ruta
 comment1.target=Lector(java.lang.String)
 comment2.params=

@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Nodo
+comment0.text=\r\n\ Clase\ de\ ejemplo\ dada\ por\ el\ profe,\ con\ algunas\ modificaciones\ \r\n
 comment1.params=
 comment1.target=void\ Nodo()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Nodo\r\n
