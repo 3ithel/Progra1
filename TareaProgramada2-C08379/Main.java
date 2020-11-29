@@ -16,15 +16,13 @@ public class Main
         metodo.calculo(ec1, ec2, operacion, resultado);
         
         ec1.imprimirLista();
-        System.out.println("");
+        System.out.print("|");
+        System.out.print(operacion);
+        System.out.print("|");
         ec2.imprimirLista();
-        System.out.println("");
-        //System.out.println(operacion);
+        System.out.print("|");
         resultado.imprimirLista();
         
-        //System.out.println(ec1.sacarValor(ec1, 2)); 
         
-        //System.out.println(ec1.avanceValor());
-        //System.out.println(ec1.avanceValor());
     }
 }

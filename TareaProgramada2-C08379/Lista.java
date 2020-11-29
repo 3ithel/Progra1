@@ -56,12 +56,12 @@ public class Lista
             
             while(auxiliar.getSiguiente() != null)
             {
-                System.out.println(auxiliar.getValor() + auxiliar.getIncognita() + "^" + auxiliar.getPotencia());
+                System.out.print(auxiliar.getValor() + auxiliar.getIncognita() + "^" + auxiliar.getPotencia());
                 auxiliar = auxiliar.getSiguiente();
                 posicion++;
             }
             
-            System.out.println(auxiliar.getValor() + auxiliar.getIncognita() + "^" + auxiliar.getPotencia());
+            System.out.print(auxiliar.getValor() + auxiliar.getIncognita() + "^" + auxiliar.getPotencia());
         }
     }
     
@@ -115,10 +115,10 @@ public class Lista
             if (posicion == 0) {
                 return auxiliar.getPotencia();
             } else {
-                for(int indice = 0; indice < (posicion); indice++)
-                {
+               for(int indice = 0; indice < (posicion); indice++)
+               {
                     auxiliar = auxiliar.getSiguiente();
-                }
+               }
                      
                 return auxiliar.getPotencia();
             }
@@ -126,18 +126,125 @@ public class Lista
         return 0;
     }
     
-    public boolean existeElemento(int valorReferencia)
+    public boolean existePotencia(int valorReferencia)
     {
         Nodo auxiliar = inicio;
         boolean encontrado = false;
         
         while(auxiliar != null && !encontrado)
         {
-            encontrado = (auxiliar.getValor() == valorReferencia);
+            encontrado = (auxiliar.getPotencia() == valorReferencia);
             auxiliar = auxiliar.getSiguiente();
         }
         
         return encontrado;
     }
     
+    public void eliminarElementoPorPotencia(int valorReferencia)
+    {
+        if(existePotencia(valorReferencia))
+        {
+            Nodo auxiliar = inicio;
+            
+            if(auxiliar.getPotencia() == valorReferencia)
+            {
+                inicio = inicio.getSiguiente();
+                auxiliar.setSiguiente(null);
+            }
+            else
+            {
+                while(auxiliar.getSiguiente().getPotencia() != valorReferencia)
+                {
+                    auxiliar = auxiliar.getSiguiente();
+                }
+                
+                Nodo nodoSiguiente = auxiliar.getSiguiente().getSiguiente();
+                auxiliar.getSiguiente().setSiguiente(null);
+                auxiliar.setSiguiente(nodoSiguiente);
+            }
+            
+            tamanio--;
+        }
+    }
+    
+    public void agregarAlInicio(int valor, int potencia)
+    {
+        Nodo nuevoNodo = new Nodo();
+        nuevoNodo.setValor(valor);
+        nuevoNodo.setIncognita("x");
+        nuevoNodo.setPotencia(potencia);
+        
+        if(esVacia())
+        {
+            inicio = nuevoNodo;
+        }
+        else
+        {
+            nuevoNodo.setSiguiente(inicio);
+            inicio = nuevoNodo;
+        }
+        
+        tamanio++;
+    }
+    
+    
+    public void insertarEnPosicion(int valor, int potencia, int posicion)
+    {
+        if(posicion >= 0 && posicion <= tamanio)
+        {
+            if(posicion == 0)
+            {
+                agregarAlInicio(valor, potencia);
+            }
+            else if(posicion == tamanio)
+            {
+                agregar(valor, potencia);
+            }
+            else
+            {
+                Nodo nuevoNodo = new Nodo();
+                nuevoNodo.setValor(valor);
+                nuevoNodo.setIncognita("x");
+                nuevoNodo.setPotencia(potencia);
+                
+                Nodo auxiliar = inicio;
+                
+                for(int indice = 0; indice < (posicion - 1); indice++)
+                {
+                    auxiliar = auxiliar.getSiguiente();
+                }
+                
+                nuevoNodo.setSiguiente(auxiliar.getSiguiente());
+                auxiliar.setSiguiente(nuevoNodo);
+                tamanio++;
+            }
+        }
+    }
+    
+    public void eliminarElementoPorPosicion(int posicion)
+    {
+         if(posicion >= 0 && posicion <= tamanio)
+        {
+            Nodo auxiliar = inicio;
+            
+            if(posicion == 0)
+            {
+                inicio = inicio.getSiguiente();
+                auxiliar.setSiguiente(null);
+            }
+            else
+            {
+                for(int indice = 0; indice < (posicion - 1); indice++)
+                {
+                    auxiliar = auxiliar.getSiguiente();
+                }
+                
+                Nodo nodoSiguiente = auxiliar.getSiguiente().getSiguiente();
+                auxiliar.getSiguiente().setSiguiente(null);
+                auxiliar.setSiguiente(nodoSiguiente);
+            }
+            
+            tamanio--;
+        }
+    }
 }

@@ -9,12 +9,11 @@ public class Metodos
 {   
     int seleccion;
     String operacion;
-    //lista clon;
     
     public Metodos () {
         seleccion = 0;
         operacion = "";
-        //clon = null;
+        
     }
     
     public void agregarElemento ( Lista lista, int valor, int potencia ) {
@@ -210,30 +209,29 @@ public class Metodos
     
     public void calculo (Lista lista1, Lista lista2, String operacion, Lista resultado) {
         if ( operacion.equals("+") ) {
-            System.out.println("es suma");
+            System.out.println("su resultado es");
             suma(lista1, lista2, resultado);
         }
         
         if ( operacion.equals("-") ) {
-            System.out.println("es resta");
+            System.out.println("su resultado es");
             resta(lista1, lista2, resultado);
         }
         
         if ( operacion.equals("/") ) {
-            System.out.println("es division");
+            System.out.println("su resultado es");
             division(lista1, lista2, resultado);
         }
         
         if ( operacion.equals("*") ) {
-            System.out.println("es multiplicacion");
+            System.out.println("su resultado es");
+            multiplicacion(lista1, lista2, resultado);
         }
     }
     
     public void suma (Lista lista1, Lista lista2, Lista resultado) {
         int limite1 = lista1.getTamanio();
         int limite2 = lista2.getTamanio();
-        //int posicion1 = 0;
-        //int posicion2 = 0;
         int confirma = 0;
         int suma = 0;
         
@@ -245,14 +243,14 @@ public class Metodos
                     
                     confirma++;
                 }
-                //posicion2++;
+                
             }
             
             if ( confirma == 0 ) {
                 resultado.agregar(lista1.sacarValor(lista1, i), lista1.sacarPotencia(lista1, i));
             }
             
-            //posicion1++;
+            
             confirma = 0;
         }
         
@@ -261,14 +259,14 @@ public class Metodos
                 if ( lista1.sacarPotencia(lista1, i) == lista2.sacarPotencia(lista2, k) && confirma == 0) {
                     confirma++;
                 }
-                //posicion2++;
+                
             }
             
             if ( confirma == 0 ) {
                 resultado.agregar(lista2.sacarValor(lista2, k), lista2.sacarPotencia(lista2, k));
             }
             
-            //posicion1++;
+            
             confirma = 0;
         }
     }
@@ -292,7 +290,72 @@ public class Metodos
     }
     
     public void multiplicacion (Lista lista1, Lista lista2, Lista resultado) {
+        int limite1 = lista1.getTamanio();
+        int limite2 = lista2.getTamanio();
+        int valor = 0;
+        int potencia = 0;
+        Lista sustituto = new Lista();
+        Lista sustituto2 = new Lista();
+        Lista sustituto3 = new Lista();
         
+        
+        for ( int i = 0; i < limite1; i++ ) {
+            for ( int k = 0; k < limite2; k++ ) {
+                valor = lista1.sacarValor(lista1, i) * lista2.sacarValor(lista2, k);
+                potencia = lista1.sacarPotencia(lista1, i) + lista2.sacarPotencia(lista2, k);
+                sustituto.agregar(valor, potencia);
+                
+            }
+           
+        }
+        
+        
+        
+        
+        valor = 0;
+        potencia = 0;
+        int valor1 = 0;
+        int potencia1 = 0;
+        
+        
+        
+        for ( int i = 1; i < sustituto.getTamanio(); i++ ) {
+            for ( int j = 0; j < sustituto.getTamanio() - i; j++) {
+                if (sustituto.sacarPotencia(sustituto, j) < sustituto.sacarPotencia(sustituto, j + 1)) {
+                    //System.out.println(sustituto.sacarPotencia(sustituto, j) + "j wololooo");
+                    //System.out.println(sustituto.sacarPotencia(sustituto, j + 1) + "j+1 wololooo");
+                    
+                    valor = sustituto.sacarValor(sustituto, j);
+                    potencia = sustituto.sacarPotencia(sustituto, j);
+                    
+                    valor1 = sustituto.sacarValor(sustituto, j + 1);
+                    potencia1 = sustituto.sacarPotencia(sustituto, j + 1);
+                    
+                    //primer paso
+                    sustituto.eliminarElementoPorPosicion(j);
+                    sustituto.insertarEnPosicion(valor1, potencia1, j);
+                    
+                    //segundo paso
+                    sustituto.eliminarElementoPorPosicion(j + 1);
+                    sustituto.insertarEnPosicion(valor, potencia, j + 1);
+                }
+            }
+        }
+        
+        int acumulado = 0;
+        
+        for (int i = 0; i < sustituto.getTamanio() - 1; i++) {
+            acumulado = acumulado + sustituto.sacarValor(sustituto, i);
+            if ( sustituto.sacarPotencia(sustituto, i) != sustituto.sacarPotencia(sustituto, i + 1)) {
+                resultado.agregar(acumulado, sustituto.sacarPotencia(sustituto, i));
+                acumulado = 0;
+            }
+            
+            if ( i == sustituto.getTamanio() - 2) {
+                resultado.agregar(acumulado + sustituto.sacarValor(sustituto, i + 1), sustituto.sacarPotencia(sustituto, i + 1));
+            }
+            
+        }
     }
     
     public int menuNumero ( int seleccion, int primOpc, int ultimOpc ) {
