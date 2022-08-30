@@ -1,3 +1,6 @@
 token git (Remoto):
 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
 recordar borrar el espacio que se hace al frente
+
+copy pasta para hacer commit sin global:
+git -c user.name='3ithel' -c user.email='eitheljose12@gmail.com' commit
